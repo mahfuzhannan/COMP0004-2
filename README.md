@@ -1,5 +1,13 @@
 # COMP0004-2
+The code for COMP0004 coursework part 2
 
-### To Run
+Build code using maven, pom.xml is provided.
 
-run main method in /src/main/java/uk/ac/ucl/Main.java
+### Pre-setup
+For this part there is no setup required before running.
+
+### To Run application
+Please execute main method in ```/src/main/java/uk/ac/ucl/Main.java```
+
+### Tests
+Tests can be found in ```/src/test/java/uk/ac/ucl```
