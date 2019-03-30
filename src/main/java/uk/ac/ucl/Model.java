@@ -84,7 +84,7 @@ public class Model {
     public int getAverageAge() {
         int ageTotal = 0;
         for(Patient patient: patients) {
-            ageTotal++;
+            ageTotal += LocalDate.now().getYear() - patient.getBirthDate().getYear();
         }
         return ageTotal/patients.size();
     }
