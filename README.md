@@ -1,5 +1,5 @@
-# COMP0004-2
-The code for COMP0004 coursework part 2
+# COMP0004-2-Q6
+The code for COMP0004 coursework part 2 - Q6
 
 Build code using maven, pom.xml is provided.
 Application will require database file, `/patients.db` at root directory, to load data
