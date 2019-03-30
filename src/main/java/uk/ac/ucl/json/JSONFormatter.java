@@ -20,22 +20,22 @@ public class JSONFormatter {
                 "\"gender\": \"" + patient.getGender() + "\"," +
                 "\"birthDate\": \"" + patient.getBirthDate() + "\"," +
                 "\"deathDate\": \"" + patient.getDeathDate() + "\"," +
-                "\"name\":" + serializeName(patient.getPatientName()) + "," +
+                "\"name\":" + serializeName(patient.getName()) + "," +
                 "\"identification\":" + serializeId(patient.getIdentification()) + "," +
                 "\"details\":" + serializeDetails(patient.getPatientDetails()) + "," +
                 "\"address\":" + serializeAddress(patient.getAddress()) +
                 "}";
     }
 
-    public String serializeName(PatientName patientName) {
-        if (patientName == null) {
+    public String serializeName(Name name) {
+        if (name == null) {
             return "{}";
         }
         return "{" +
-                "\"prefix\": \"" + patientName.getPrefix() + "\"," +
-                "\"first\": \"" + patientName.getFirst() + "\"," +
-                "\"last\": \"" + patientName.getLast() + "\"," +
-                "\"suffix\": \"" + patientName.getSuffix() + "\"" +
+                "\"prefix\": \"" + name.getPrefix() + "\"," +
+                "\"first\": \"" + name.getFirst() + "\"," +
+                "\"last\": \"" + name.getLast() + "\"," +
+                "\"suffix\": \"" + name.getSuffix() + "\"" +
                 "}";
     }
 
@@ -135,18 +135,18 @@ public class JSONFormatter {
                     }
                     break;
                 case "prefix":
-                    PatientName patientName = new PatientName();
-                    patientName.setPrefix(value);
-                    patient.setPatientName(patientName);
+                    Name name = new Name();
+                    name.setPrefix(value);
+                    patient.setName(name);
                     break;
                 case "first":
-                    patient.getPatientName().setFirst(value);
+                    patient.getName().setFirst(value);
                     break;
                 case "last":
-                    patient.getPatientName().setLast(value);
+                    patient.getName().setLast(value);
                     break;
                 case "suffix":
-                    patient.getPatientName().setSuffix(value);
+                    patient.getName().setSuffix(value);
                     break;
                 case "ssn":
                     Identification id = new Identification();

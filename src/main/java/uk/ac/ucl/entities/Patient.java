@@ -11,7 +11,7 @@ public class Patient {
     private Gender gender;
     private LocalDate birthDate;
     private LocalDate deathDate;
-    private PatientName patientName;
+    private Name name;
     private Identification identification;
     private PatientDetails patientDetails;
     private Address address;
@@ -19,12 +19,12 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(UUID id, Gender gender, LocalDate birthDate, LocalDate deathDate, PatientName patientName, Identification identification, PatientDetails patientDetails, Address address) {
+    public Patient(UUID id, Gender gender, LocalDate birthDate, LocalDate deathDate, Name name, Identification identification, PatientDetails patientDetails, Address address) {
         this.id = id;
         this.gender = gender;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
-        this.patientName = patientName;
+        this.name = name;
         this.identification = identification;
         this.patientDetails = patientDetails;
         this.address = address;
@@ -62,12 +62,12 @@ public class Patient {
         this.deathDate = deathDate;
     }
 
-    public PatientName getPatientName() {
-        return patientName;
+    public Name getName() {
+        return name;
     }
 
-    public void setPatientName(PatientName patientName) {
-        this.patientName = patientName;
+    public void setName(Name name) {
+        this.name = name;
     }
 
     public Identification getIdentification() {
@@ -96,14 +96,14 @@ public class Patient {
 
     @Override
     public String toString() {
-        return patientName.toString();
+        return name.toString();
     }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Patient) {
            Patient other = (Patient)obj;
-           return id.equals(other.id) && patientName.equals(other.patientName) && identification.equals(other.identification);
+           return id.equals(other.id) && name.equals(other.name) && identification.equals(other.identification);
         } else {
             return false;
         }
